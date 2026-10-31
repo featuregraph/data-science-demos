@@ -1,0 +1,56 @@
+raw_name,name,description,units,type,notes
+faultNumber,fault_number,Fault scenario for this run; 0 means no fault,,id,
+simulationRun,simulation_run,Index of the simulation run within a fault scenario,,id,
+sample,sample,"Reading number within a run, starting at 1; readings are 3 minutes apart",,time,Time since the start of a run is (sample - 1) x 3 minutes
+xmeas_1,a_feed,A feed (stream 1),kscmh,measurement_continuous,
+xmeas_2,d_feed,D feed (stream 2),kg/h,measurement_continuous,
+xmeas_3,e_feed,E feed (stream 3),kg/h,measurement_continuous,
+xmeas_4,a_and_c_feed,A and C feed (stream 4),kscmh,measurement_continuous,
+xmeas_5,recycle_flow,Recycle flow (stream 8),kscmh,measurement_continuous,
+xmeas_6,reactor_feed_rate,Reactor feed rate (stream 6),kscmh,measurement_continuous,Base-case value 42.339 kscmh
+xmeas_7,reactor_pressure,Reactor pressure,kPa gauge,measurement_continuous,Base-case value 2705.0 kPa gauge; process shuts down above 3000 kPa
+xmeas_8,reactor_level,Reactor level,%,measurement_continuous,
+xmeas_9,reactor_temperature,Reactor temperature,deg C,measurement_continuous,Base-case value 120.40 deg C
+xmeas_10,purge_rate,Purge rate (stream 9),kscmh,measurement_continuous,
+xmeas_11,separator_temperature,Product separator temperature,deg C,measurement_continuous,
+xmeas_12,separator_level,Product separator level,%,measurement_continuous,
+xmeas_13,separator_pressure,Product separator pressure,kPa gauge,measurement_continuous,
+xmeas_14,separator_underflow,Product separator underflow (stream 10),m3/h,measurement_continuous,
+xmeas_15,stripper_level,Stripper level,%,measurement_continuous,
+xmeas_16,stripper_pressure,Stripper pressure,kPa gauge,measurement_continuous,
+xmeas_17,stripper_underflow,Stripper underflow (stream 11),m3/h,measurement_continuous,
+xmeas_18,stripper_temperature,Stripper temperature,deg C,measurement_continuous,
+xmeas_19,stripper_steam_flow,Stripper steam flow,kg/h,measurement_continuous,
+xmeas_20,compressor_work,Compressor work,kW,measurement_continuous,
+xmeas_21,reactor_cooling_water_outlet_temp,Reactor cooling water outlet temperature,deg C,measurement_continuous,
+xmeas_22,separator_cooling_water_outlet_temp,Separator cooling water outlet temperature,deg C,measurement_continuous,
+xmeas_23,reactor_feed_composition_a,"Reactor feed analysis, component A (stream 6)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_24,reactor_feed_composition_b,"Reactor feed analysis, component B (stream 6)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_25,reactor_feed_composition_c,"Reactor feed analysis, component C (stream 6)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_26,reactor_feed_composition_d,"Reactor feed analysis, component D (stream 6)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_27,reactor_feed_composition_e,"Reactor feed analysis, component E (stream 6)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_28,reactor_feed_composition_f,"Reactor feed analysis, component F (stream 6)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_29,purge_composition_a,"Purge gas analysis, component A (stream 9)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_30,purge_composition_b,"Purge gas analysis, component B (stream 9)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_31,purge_composition_c,"Purge gas analysis, component C (stream 9)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_32,purge_composition_d,"Purge gas analysis, component D (stream 9)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_33,purge_composition_e,"Purge gas analysis, component E (stream 9)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_34,purge_composition_f,"Purge gas analysis, component F (stream 9)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_35,purge_composition_g,"Purge gas analysis, component G (stream 9)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_36,purge_composition_h,"Purge gas analysis, component H (stream 9)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_37,product_composition_d,"Product analysis, component D (stream 11)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_38,product_composition_e,"Product analysis, component E (stream 11)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_39,product_composition_f,"Product analysis, component F (stream 11)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_40,product_composition_g,"Product analysis, component G (stream 11)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmeas_41,product_composition_h,"Product analysis, component H (stream 11)",mol %,measurement_sampled,Analyzer reading; updated less often than the continuous measurements
+xmv_1,d_feed_valve,D feed flow valve position (stream 2),%,manipulated,Controller output; published tables differ on whether to describe it as a flow or a valve position. Confirm against the dataset documentation
+xmv_2,e_feed_valve,E feed flow valve position (stream 3),%,manipulated,
+xmv_3,a_feed_valve,A feed flow valve position (stream 1),%,manipulated,
+xmv_4,a_and_c_feed_valve,A and C feed flow valve position (stream 4),%,manipulated,
+xmv_5,compressor_recycle_valve,Compressor recycle valve position,%,manipulated,
+xmv_6,purge_valve,Purge valve position (stream 9),%,manipulated,
+xmv_7,separator_underflow_valve,Product separator liquid flow valve position (stream 10),%,manipulated,
+xmv_8,stripper_underflow_valve,Stripper liquid product flow valve position (stream 11),%,manipulated,
+xmv_9,stripper_steam_valve,Stripper steam valve position,%,manipulated,
+xmv_10,reactor_cooling_water_valve,Reactor cooling water flow valve position,%,manipulated,
+xmv_11,condenser_cooling_water_valve,Condenser cooling water flow valve position,%,manipulated,
