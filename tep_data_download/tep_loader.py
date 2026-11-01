@@ -39,12 +39,20 @@ READINGS_PER_RUN = {"training": 500, "testing": 960}
 MINUTES_PER_READING = 3.0
 SHUTDOWN_KPA = 3000.0
 
+# Some servers refuse the default Python identifier. If you still get a 403, try a browser-like value here.
+HEADERS = {"User-Agent": "tep-loader/1.0 (+https://featuregraph.ai)"}
+
+# Optional shortcut: if the file listing is refused, fill in the numbers from the download links on the
+# dataset page (they look like .../api/access/datafile/1234567), for example
+# FILE_IDS = {"TEP_FaultFree_Training.RData": 1234567}
+FILE_IDS = {}
+
 
 # ---------------------------------------------------------------- download
 
 def _get(url, server):
     try:
-        with urllib.request.urlopen(url, timeout=120) as response:
+        with urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=120) as response:
             return response.read()
     except urllib.error.HTTPError as e:
         raise RuntimeError(f"{server} answered {e.code} for {url}") from e
@@ -69,7 +77,7 @@ def download(filename, data_dir, server=SERVER):
     """Download one dataset file into data_dir (original format) and return its path."""
     data_dir = Path(data_dir)
     data_dir.mkdir(parents=True, exist_ok=True)
-    available = list_files(server)
+    available = dict(FILE_IDS) if filename in FILE_IDS else list_files(server)
     if filename not in available:
         raise RuntimeError(f"{filename} is not in the dataset listing. Files found: {sorted(available)}")
     url = f"{server}/api/access/datafile/{available[filename]}?format=original"
